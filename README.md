@@ -1,4 +1,4 @@
 pop3_client
 ===========
 
-po3 simple client by python
+pop3 simple client by python
