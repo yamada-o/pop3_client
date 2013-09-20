@@ -13,7 +13,7 @@ def _info(pop3):
 
 
 def _list(pop3, search=False):
-    if search == True:
+    if search:
         word = raw_input('input search word: ')
 
     res, data, octets = pop3.list()
