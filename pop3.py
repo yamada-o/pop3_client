@@ -44,9 +44,7 @@ def _list(pop3, search=False):
 def _delete(pop3):
     print 'input numbers to delete(split by white space or TAB)'
     delete = raw_input('(ex: 1 5-10 12): ')
-    for number_to_delete in delete.split():
-        l = len(number_to_delete)
-        if l == 1:
+        if number_to_delete.find('-') == -1:
             try:
                 n = int(number_to_delete)
             except ValueError:
@@ -60,7 +58,7 @@ def _delete(pop3):
                 #print e
                 print "error occured. '%s' is wrong number?" % number_to_delete
 
-        elif l == 3 and number_to_delete.find('-') == 1:
+        else:
             first, last = number_to_delete.split('-', 1)
             try:
                 first_num = int(first) 
@@ -79,10 +77,6 @@ def _delete(pop3):
                     #print e
                     print "error occured. '%s' include wrong number?" % number_to_delete
                     continue
-
-        else:
-            print 'ignoring...', number_to_delete
-            continue
 
   
 def _rset(pop3):
